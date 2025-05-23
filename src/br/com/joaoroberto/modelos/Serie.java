@@ -1,10 +1,12 @@
 package br.com.joaoroberto.modelos;
 
-public class Serie {
+import br.com.joaoroberto.calculo.Classificavel;
+
+public class Serie extends Titulo {
     private int temporadas;
     private boolean ativa;
-    private int episodioPorTemporada;
-    private int minutoPorTemporada;
+    private int episodiosPorTemporada;
+    private int minutosPorEpisodio;
 
     public int getTemporadas() {
         return temporadas;
@@ -22,19 +24,33 @@ public class Serie {
         this.ativa = ativa;
     }
 
-    public int getEpisodioPorTemporada() {
-        return episodioPorTemporada;
+    public int getEpisodiosPorTemporada() {
+        return episodiosPorTemporada;
     }
 
-    public void setEpisodioPorTemporada(int episodioPorTemporada) {
-        this.episodioPorTemporada = episodioPorTemporada;
+    public void setEpisodiosPorTemporada(int episodiosPorTemporada) {
+        this.episodiosPorTemporada = episodiosPorTemporada;
     }
 
-    public int getMinutoPorTemporada() {
-        return minutoPorTemporada;
+    public int getMinutosPorEpisodio() {
+        return minutosPorEpisodio;
     }
 
-    public void setMinutoPorTemporada(int minutoPorTemporada) {
-        this.minutoPorTemporada = minutoPorTemporada;
+    public void setMinutosPorEpisodio(int minutosPorEpisodio) {
+        this.minutosPorEpisodio = minutosPorEpisodio;
+    }
+
+    @Override //A notação serve para informar sobre qualquer modificação no metodo.
+    public int getDuracaoEmMinutos() {
+        return temporadas * episodiosPorTemporada * minutosPorEpisodio;
+    }
+
+    @Override
+    public void exibeFichaTecnica() {
+        System.out.println("Nome: " + getNome());
+        System.out.println("Ano de Lançamento: " + getAnoDeLancamento());
+        System.out.println("Temporadas: " + getTemporadas());
+        System.out.println("Episódios por temporada: " + getEpisodiosPorTemporada());
+        System.out.println("Minutos por epispódio: " + getMinutosPorEpisodio());
     }
 }
