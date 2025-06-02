@@ -4,6 +4,8 @@ import br.com.joaoroberto.modelos.Episodio;
 import br.com.joaoroberto.modelos.Filme;
 import br.com.joaoroberto.modelos.Serie;
 
+import java.util.ArrayList;
+
 public class Principal {
     public static void main(String[] args) {
 
@@ -49,5 +51,18 @@ public class Principal {
         episodio.setSerie(lost);
         episodio.setTotalVisualizacao(300);
         filtro.filtra(episodio);
+
+        var filmeDoJoao = new Filme(); //A variável 'var' realiza uma inferência do tipo declarado.
+        filmeDoJoao.setNome("Sinners");
+        filmeDoJoao.setDuracaoEmMinutos(137);
+        filmeDoJoao.setAnoDeLancamento(2025);
+        filmeDoJoao.avalia(9);
+
+        ArrayList<Filme> listaDeFilmes = new ArrayList<>();
+        listaDeFilmes.add(filmeDoJoao);
+        listaDeFilmes.add(meuFilme);
+        listaDeFilmes.add(outroFilme);
+        System.out.println("Tamanho da lista: " + listaDeFilmes.size());
+        System.out.println("Primeiro filme: " + listaDeFilmes.get(0));
     }
 }
