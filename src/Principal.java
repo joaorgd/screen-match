@@ -52,17 +52,25 @@ public class Principal {
         episodio.setTotalVisualizacao(300);
         filtro.filtra(episodio);
 
-        var filmeDoJoao = new Filme(); //A variável 'var' realiza uma inferência do tipo declarado.
+        /* A palavra-chave 'var' permite que o compilador infira automaticamente o tipo da variável com
+        base no valor lhe atribuído.
+        1. O tipo da variável deve ser inferido automaticamente pelo compilador. Isso significa que não é possível
+           utilizar var em variáveis cujo tipo não possa ser inferido automaticamente.
+        2. Não é possível usar var em variáveis sem valor inicial. É necessário atribuir um valor à variável na mesma
+           linha em que ela é declarada. */
+        var filmeDoJoao = new Filme();
         filmeDoJoao.setNome("Sinners");
         filmeDoJoao.setDuracaoEmMinutos(137);
         filmeDoJoao.setAnoDeLancamento(2025);
         filmeDoJoao.avalia(9);
 
+        /* Em Java, arrays são estruturas de dados que permitem armazenar uma coleção de elementos do mesmo tipo. Eles são muito utilizados para manipulação de dados em projetos de programação. */
         ArrayList<Filme> listaDeFilmes = new ArrayList<>();
         listaDeFilmes.add(filmeDoJoao);
         listaDeFilmes.add(meuFilme);
         listaDeFilmes.add(outroFilme);
         System.out.println("Tamanho da lista: " + listaDeFilmes.size());
-        System.out.println("Primeiro filme: " + listaDeFilmes.get(0));
+        System.out.println("Primeiro filme: " + listaDeFilmes.getFirst().getNome());
+        System.out.println("ToString do "  + listaDeFilmes.getFirst().toString());
     }
 }
