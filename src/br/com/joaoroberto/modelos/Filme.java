@@ -5,11 +5,17 @@ import br.com.joaoroberto.calculo.Classificavel;
 public class Filme extends Titulo implements Classificavel { //A palavra reservada "extends" é para ativar a herança.
     private String diretor;
 
+    public Filme(String nome) {
+        this.setNome(nome);
+    }
+
     public String getDiretor() {
+
         return diretor;
     }
 
     public void setDiretor(String diretor) {
+
         this.diretor = diretor;
     }
 

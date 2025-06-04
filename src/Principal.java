@@ -9,8 +9,7 @@ import java.util.ArrayList;
 public class Principal {
     public static void main(String[] args) {
 
-        Filme meuFilme = new Filme();
-        meuFilme.setNome("Star Wars Episode IV: A New Hope");
+        Filme meuFilme = new Filme("Star Wars Episode IV: A New Hope");
         meuFilme.setAnoDeLancamento(1977);
         meuFilme.setDuracaoEmMinutos(121);
         System.out.println("Duração do filme: " + meuFilme.getDuracaoEmMinutos());
@@ -32,8 +31,7 @@ public class Principal {
         lost.exibeFichaTecnica();
         System.out.println("Duração da maratona Lost: " + lost.getDuracaoEmMinutos());
 
-        Filme outroFilme = new Filme();
-        outroFilme.setNome("Star Wars Episode V: The Empire Strikes Back");
+        Filme outroFilme = new Filme("Star Wars Episode V: The Empire Strikes Back");
         outroFilme.setAnoDeLancamento(1980);
         outroFilme.setDuracaoEmMinutos(124);
 
@@ -58,8 +56,7 @@ public class Principal {
            utilizar var em variáveis cujo tipo não possa ser inferido automaticamente.
         2. Não é possível usar var em variáveis sem valor inicial. É necessário atribuir um valor à variável na mesma
            linha em que ela é declarada. */
-        var filmeDoJoao = new Filme();
-        filmeDoJoao.setNome("Sinners");
+        var filmeDoJoao = new Filme("Sinners");
         filmeDoJoao.setDuracaoEmMinutos(137);
         filmeDoJoao.setAnoDeLancamento(2025);
         filmeDoJoao.avalia(9);
