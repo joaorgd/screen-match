@@ -5,6 +5,7 @@ import br.com.joaoroberto.calculo.Classificavel;
 public class Filme extends Titulo implements Classificavel { //A palavra reservada "extends" é para ativar a herança.
     private String diretor;
 
+    /* Em Java, um construtor é um método especial usado para criar e inicializar um objeto recém-criado. Quando uma classe é definida, ela pode ter um ou mais construtores, sendo que se nenhum construtor for definido explicitamente, o Java criará um construtor default (padrão) automaticamente. */
     public Filme(String nome) {
         this.setNome(nome);
     }
