@@ -1,3 +1,5 @@
+package br.com.joaoroberto.principal;
+
 import br.com.joaoroberto.calculo.CalculdadoraDeTempo;
 import br.com.joaoroberto.calculo.FiltroRecomendacao;
 import br.com.joaoroberto.modelos.Episodio;
@@ -9,8 +11,7 @@ import java.util.ArrayList;
 public class Principal {
     public static void main(String[] args) {
 
-        Filme meuFilme = new Filme("Star Wars Episode IV: A New Hope");
-        meuFilme.setAnoDeLancamento(1977);
+        Filme meuFilme = new Filme("Star Wars Episode IV: A New Hope", 1977);
         meuFilme.setDuracaoEmMinutos(121);
         System.out.println("Duração do filme: " + meuFilme.getDuracaoEmMinutos());
 
@@ -22,8 +23,7 @@ public class Principal {
         System.out.println("Total das Avaliações: " + meuFilme.getTotalDeAvaliacoes());
         System.out.println("Média das Avaliações: " + meuFilme.pegaMedia());
 
-        Serie lost = new Serie();
-        lost.setNome("Lost");
+        Serie lost = new Serie("Lost", 2000);
         lost.setAnoDeLancamento(2004);
         lost.setTemporadas(6);
         lost.setEpisodiosPorTemporada(18);
@@ -31,8 +31,7 @@ public class Principal {
         lost.exibeFichaTecnica();
         System.out.println("Duração da maratona Lost: " + lost.getDuracaoEmMinutos());
 
-        Filme outroFilme = new Filme("Star Wars Episode V: The Empire Strikes Back");
-        outroFilme.setAnoDeLancamento(1980);
+        Filme outroFilme = new Filme("Star Wars Episode V: The Empire Strikes Back", 1980);
         outroFilme.setDuracaoEmMinutos(124);
 
         CalculdadoraDeTempo calculadora = new CalculdadoraDeTempo();
@@ -56,9 +55,8 @@ public class Principal {
            utilizar var em variáveis cujo tipo não possa ser inferido automaticamente.
         2. Não é possível usar var em variáveis sem valor inicial. É necessário atribuir um valor à variável na mesma
            linha em que ela é declarada. */
-        var filmeDoJoao = new Filme("Sinners");
+        var filmeDoJoao = new Filme("Sinners", 2023);
         filmeDoJoao.setDuracaoEmMinutos(137);
-        filmeDoJoao.setAnoDeLancamento(2025);
         filmeDoJoao.avalia(9);
 
         /* Em Java, arrays são estruturas de dados que permitem armazenar uma coleção de elementos do mesmo tipo. Eles são muito utilizados para manipulação de dados em projetos de programação. */
