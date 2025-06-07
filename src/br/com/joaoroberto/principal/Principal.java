@@ -55,7 +55,7 @@ public class Principal {
            utilizar var em variáveis cujo tipo não possa ser inferido automaticamente.
         2. Não é possível usar var em variáveis sem valor inicial. É necessário atribuir um valor à variável na mesma
            linha em que ela é declarada. */
-        var filmeDoJoao = new Filme("Sinners", 2023);
+        var filmeDoJoao = new Filme("Star Wars Episode VI: The Return Of The Jedi", 1983);
         filmeDoJoao.setDuracaoEmMinutos(137);
         filmeDoJoao.avalia(9);
 

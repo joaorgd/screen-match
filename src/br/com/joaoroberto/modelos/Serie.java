@@ -61,4 +61,9 @@ public class Serie extends Titulo {
         System.out.println("Episódios por temporada: " + getEpisodiosPorTemporada());
         System.out.println("Minutos por epispódio: " + getMinutosPorEpisodio());
     }
+
+    @Override
+    public String toString() {
+        return "Série: " + this.getNome() + " (" + this.getAnoDeLancamento() + ")";
+    }
 }

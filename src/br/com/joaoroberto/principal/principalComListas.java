@@ -5,6 +5,8 @@ import br.com.joaoroberto.modelos.Serie;
 import br.com.joaoroberto.modelos.Titulo;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class principalComListas {
     public static void main(String[] args) {
@@ -12,7 +14,7 @@ public class principalComListas {
         meuFilme.avalia(9);
         Filme outroFilme = new Filme("Star Wars Episode V: The Empire Strikes Back", 1980);
         outroFilme.avalia(9.5);
-        var filmeDoJoao = new Filme("Sinners", 2023);
+        var filmeDoJoao = new Filme("Star Wars Episode VI: The Return Of The Jedi", 1983);
         filmeDoJoao.avalia(8);
         Serie lost = new Serie("Lost", 2000);
         lost.avalia(8.5);
@@ -30,5 +32,20 @@ public class principalComListas {
                 System.out.println("Classificação: " + filme.getClassificacao());
             }
         }
+
+        ArrayList<String> buscaPorArtista= new ArrayList<>();
+        buscaPorArtista.add("Timothée Chalamet");
+        buscaPorArtista.add("Brad Pitt");
+        buscaPorArtista.add("Anne Hathaway");
+        System.out.println(buscaPorArtista);
+
+        Collections.sort(buscaPorArtista);
+        System.out.println("Lista ordendada: " + buscaPorArtista);
+
+        System.out.println("Lista ordenada de títulos decrescente: " + lista);
+        Collections.sort(lista);
+
+        lista.sort(Comparator.comparing(Titulo::getAnoDeLancamento));
+        System.out.println("Lista ordenada de títulos crescente: " + lista);
     }
 }
