@@ -19,14 +19,17 @@ public class Serie extends Titulo {
     }
 
     public boolean isAtiva() {
+
         return ativa;
     }
 
     public void setAtiva(boolean ativa) {
+
         this.ativa = ativa;
     }
 
     public int getEpisodiosPorTemporada() {
+
         return episodiosPorTemporada;
     }
 
@@ -35,15 +38,18 @@ public class Serie extends Titulo {
     }
 
     public int getMinutosPorEpisodio() {
+
         return minutosPorEpisodio;
     }
 
     public void setMinutosPorEpisodio(int minutosPorEpisodio) {
+
         this.minutosPorEpisodio = minutosPorEpisodio;
     }
 
     @Override //A notação serve para informar sobre qualquer modificação no metodo.
     public int getDuracaoEmMinutos() {
+
         return temporadas * episodiosPorTemporada * minutosPorEpisodio;
     }
 
