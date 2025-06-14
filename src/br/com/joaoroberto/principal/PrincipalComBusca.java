@@ -21,23 +21,31 @@ public class PrincipalComBusca {
         var busca = leitura.nextLine();
 
         String endereco = "https://www.omdbapi.com/?t=" + busca + "&apikey=2d9a4818";
+        try {
+            HttpClient client = HttpClient.newHttpClient();
+            HttpRequest request = HttpRequest.newBuilder()
+                    .uri(URI.create(endereco))
+                    .build();
+            HttpResponse<String> response = client
+                    .send(request, HttpResponse.BodyHandlers.ofString());
 
-        HttpClient client = HttpClient.newHttpClient();
-        HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create(endereco))
-                .build();
-        HttpResponse<String> response = client
-                .send(request, HttpResponse.BodyHandlers.ofString());
+            String json = response.body();
+            System.out.println(json);
 
-        String json = response.body();
-        System.out.println(json);
-
-        Gson gson = new GsonBuilder().setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE).create();
-        TituloOmdb meuTituloOmdb = gson.fromJson(json, TituloOmdb.class);
-        System.out.println(meuTituloOmdb);
-        Titulo meuTitulo = new Titulo(meuTituloOmdb);
-        System.out.println("Título convertido: ");
-        System.out.println(meuTitulo);
-
+            Gson gson = new GsonBuilder().setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE).create();
+            TituloOmdb meuTituloOmdb = gson.fromJson(json, TituloOmdb.class);
+            System.out.println(meuTituloOmdb);
+            //try {
+            Titulo meuTitulo = new Titulo(meuTituloOmdb);
+            System.out.println("Título convertido: ");
+            System.out.println(meuTitulo);
+        } catch (NumberFormatException e) {
+            System.out.println("Ocorreu um erro: ");
+            System.out.println(e.getMessage());
+        } catch (IllegalArgumentException e) {
+            System.out.println("Argumento inválido, verifique a busca.");
+        }
+        System.out.println("Programa concluído com sucesso!");
     }
 }
+//Ctrl + Alt + i (atalho para formatar a indentação do código)
