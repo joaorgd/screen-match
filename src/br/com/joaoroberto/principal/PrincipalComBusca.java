@@ -1,5 +1,6 @@
 package br.com.joaoroberto.principal;
 
+import br.com.joaoroberto.exception.ErrorDeConversaoDeAnoException;
 import br.com.joaoroberto.modelos.Titulo;
 import br.com.joaoroberto.modelos.TituloOmdb;
 import com.google.gson.FieldNamingPolicy;
@@ -20,7 +21,7 @@ public class PrincipalComBusca {
         System.out.print("Digite um filme: ");
         var busca = leitura.nextLine();
 
-        String endereco = "https://www.omdbapi.com/?t=" + busca + "&apikey=2d9a4818";
+        String endereco = "https://www.omdbapi.com/?t=" + busca.replace(" ", "+") + "&apikey=2d9a4818";
         try {
             HttpClient client = HttpClient.newHttpClient();
             HttpRequest request = HttpRequest.newBuilder()
@@ -44,6 +45,8 @@ public class PrincipalComBusca {
             System.out.println(e.getMessage());
         } catch (IllegalArgumentException e) {
             System.out.println("Argumento inválido, verifique a busca.");
+        } catch (ErrorDeConversaoDeAnoException e) {
+            System.out.println(e.getMessage());
         }
         System.out.println("Programa concluído com sucesso!");
     }
